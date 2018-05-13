@@ -3,9 +3,6 @@
 
       <div class="f-input">
         <input type="text" v-model="keyName" class="f-input-m" placeholder="name" v-if="needName">
-        <select v-model="formatSelected" class="f-input-m">
-            <option :value="item" v-for="(item, index) in formats" :key="item">{{item}}</option>
-        </select>
         <span class="f-input-m"><b>:</b></span>
 
         <!-- -- -->
@@ -21,8 +18,8 @@
 
       <!-- -- -->
       <div class="f-btns">
-        <button class="pure-button f-confirm" @click="confirm">确定</button>
-        <button class="pure-button" @click="cancel">取消</button>
+        <button class="pure-button f-confirm" @click="confirm">Confirm</button>
+        <button class="pure-button" @click="cancel">Cancel</button>
       </div>
   </div>
 
@@ -33,7 +30,7 @@ export default {
     name: "ItemAddForm",
     data: function() {
         return {
-            formats: ["string", "array", "object", "number", "boolean"],
+            formats:"string",
             formatSelected: "string",
             //--
             keyName: "",

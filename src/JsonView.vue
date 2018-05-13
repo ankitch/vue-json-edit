@@ -6,9 +6,6 @@
                 <i class="collapse-down" v-if="item.type == 'object' || item.type == 'array'" @click="closeBlock(index, $event)">
                     <i class="icon-down-open"></i>
                 </i>
-                <i class="del-btn" @click="delItem(parsedData, item, index)">
-                    <i class="icon-trash"></i>
-                </i>
                 <i v-if="item.type == 'object'" class="i-type">{{'{' + item.childParams.length + '}'}}</i>
                 <i v-if="item.type == 'array'" class="i-type">{{'[' + item.childParams.length + ']'}}</i>
             </span>
@@ -34,11 +31,8 @@
             </span>
         </span>
 
-        <item-add-form v-if="toAddItem" @confirm="newItem" @cancel="cancelNewItem"></item-add-form>
 
-        <div class="block add-key" @click="addItem" v-if="!toAddItem">
-            <i class="icon-plus"></i>
-        </div>
+      
     </div>
 </template>
 
